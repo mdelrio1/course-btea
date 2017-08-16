@@ -255,7 +255,7 @@ rather than from the root of the file system.
 
 -->
 
-##absolute path
+## absolute path
 If we run `ls -F /data` (*with* a leading slash) we get a different answer,
 because `/data` is an **absolute path**:
 
@@ -397,7 +397,7 @@ but we'll see some uses for it soon.
 > because there are fewer special cases and exceptions to keep track of.
 > --->
 
-##Nelle's Pipeline: Organizing Files
+## Nelle's Pipeline: Organizing Files
 
 Knowing just this much about files and directories,
 Nelle is ready to organize the files that the protein assay machine will create.
@@ -464,7 +464,7 @@ and we will see it in many other tools as we go on.
 
 
 
-##Key Points
+## Key Points
 
 * The file system is responsible for managing information on the disk.
 * Information is stored in files, which are stored in directories (folders).
@@ -479,7 +479,7 @@ and we will see it in many other tools as we go on.
 
 <!--
 
-#Quiz
+# Quiz
 
 <img src="http://eagle.fish.washington.edu/cnidarian/skitch/Files_and_Directories_1A575F26.png" alt="Filesystem for Challenge Questions" />
 
@@ -767,7 +767,7 @@ Now that we know a few basic commands, we can finally look at the shell's most p
     cubane.pdb    ethane.pdb    methane.pdb
     octane.pdb    pentane.pdb   propane.pdb
     
-##word count
+## word count
 
 Let's go into that directory with `cd` and run the command `wc *.pdb`. `wc` is the "word count" command: it counts the number of lines, words, and characters in files. The `*` in `*.pdb` matches zero or more characters, so the shell turns `*.pdb` into a complete list of `.pdb` files:
 
@@ -803,7 +803,7 @@ If we run `wc -l` instead of just `wc`, the output shows only the number of line
 
 We can also use `-w` to get only the number of words, or `-c` to get only the number of characters.
 
-##redirect
+## redirect
 Which of these files is shortest? It's an easy question to answer when there are only six files, but what if there were 6000? Our first step toward a solution is to run the command:
 
     $ wc -l *.pdb > lengths
@@ -813,7 +813,7 @@ The `>` tells the shell to [redirect][5] the command's output to a file instead 
     $ ls lengths
 
     lengths
-##cat
+## cat
 We can now send the content of `lengths` to the screen using `cat lengths`. `cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
 
     $ cat lengths
@@ -825,7 +825,7 @@ We can now send the content of `lengths` to the screen using `cat lengths`. `cat
       21  pentane.pdb
       15  propane.pdb
      107  total
-##sort
+## sort
 Now let's use the `sort` command to sort its contents. We will also use the -n flag to specify that the sort is numerical instead of alphabetical. This does _not_ change the file; instead, it sends the sorted result to the screen:
 
     $ sort -n lengths
@@ -838,7 +838,7 @@ Now let's use the `sort` command to sort its contents. We will also use the -n f
      30  octane.pdb
     107  total
 
-##head
+## head
 We can put the sorted list of lines in another temporary file called `sorted-lengths` by putting `> sorted-lengths` after the command, just as we used `> lengths` to put the output of `wc` into `lengths`. Once we've done that, we can run another command called `head` to get the first few lines in `sorted-lengths`:
 
     $ sort -n lengths > sorted-lengths
@@ -847,7 +847,7 @@ We can put the sorted list of lines in another temporary file called `sorted-len
       9  methane.pdb
 
 Using the parameter `-1` with `head` tells it that we only want the first line of the file; `-20` would get the first 20, and so on. Since `sorted-lengths` contains the lengths of our files ordered from least to greatest, the output of `head` must be the file with the fewest lines.
-##pipe
+## pipe
 If you think this is confusing, you're in good company: even once you understand what `wc`, `sort`, and `head` do, all those intermediate files make it hard to follow what's going on. We can make it easier to understand by running `sort` and `head` together:
 
     $ sort -n lengths | head -1
