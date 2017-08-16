@@ -213,7 +213,7 @@ which doesn't exist.
 -->
 
 
-##relative path
+## relative path
 Now let's take a look at what's in Nelle's `data` directory by running `ls -F data`,
 i.e.,
 the command `ls` with the **arguments** `-F` and `data`.
