@@ -1,11 +1,11 @@
-#Just Text
+# Just Text
 
-##Navigating the computer from the command line
+## Navigating the computer from the command line
 In this module we will be following a Software Carpentry Lesson. It is suggested that you have this page open to follow along and a bash shell window. 
 
 ---
 
-#The Unix Shell
+# The Unix Shell
 
 *credit*:    
 [![sc](http://eagle.fish.washington.edu/cnidarian/skitch/Files_and_Directories_1A575F8C.png)](http://software-carpentry.org/)   
@@ -15,7 +15,7 @@ see also
 
 ---
 
-#Intro
+# Intro
 
 > ## Learning Objectives
 >
@@ -146,7 +146,7 @@ because its name begins with `/`.
 
 So that we have the same experience lets navigate to the 'fake' directory structure you just downloaded.  For example on a Mac you can type `cd Desktop/shell-novice/data/users/nelle` if you are in your home direcotory.
 
-##ls
+## ls
 
 Let's see what's in Nelle's home directory by running `ls`,
 which stands for "listing":
